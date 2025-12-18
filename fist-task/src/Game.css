@@ -1,0 +1,125 @@
+/* App.css */
+
+/* Body styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f0f0, #d6e0f0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Game container */
+.game {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  background-color: #ffffffdd;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.game:hover {
+  transform: scale(1.02);
+}
+
+/* Game board styling */
+.game-board {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Board rows */
+.board-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Square button */
+.square {
+  width: 80px;
+  height: 80px;
+  background-color: #1e90ff;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.square:hover {
+  transform: scale(1.1);
+  background-color: #1c7ed6;
+}
+
+/* Status text */
+.status {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+/* Game info (moves list) */
+.game-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.game-info ol {
+  padding-left: 20px;
+}
+
+.game-info button {
+  background-color: #ff6b6b;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.game-info button:hover {
+  background-color: #fa5252;
+  transform: translateY(-2px);
+}
+
+/* Winner highlight */
+.status::before {
+  content: '🎉 ';
+}
+
+.status:empty::before {
+  content: '';
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .game {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .square {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
